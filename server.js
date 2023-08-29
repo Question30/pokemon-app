@@ -1,9 +1,14 @@
 const express = require('express');
+const jsxEngine = require('jsx-view-engine');
 
 const pokemon = require('./models/pokemon');
 
 const app = express();
 const  PORT = 3000;
+
+//App config
+app.set('view engine', 'jsx');
+app.engine('jsx', jsxEngine());
 
 //Routes
 app.get('/', (req, res) => {
@@ -11,7 +16,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/pokemon', (req, res) => {
-    res.send(pokemon);
+    res.render('Index', {
+        pokemon
+    });
 });
 
 app.listen(PORT, () => {
