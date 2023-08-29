@@ -16,8 +16,9 @@ function Index ({pokemon}){
             {
                 pokemon.map((pokemon, i) => {
                     return(
-                        <li>
+                        <li> <a href={`/pokemon/${i}`}>
                             {capitalizeFirstLetter(pokemon.name)}
+                        </a>
                         </li>
                     )
                 })
