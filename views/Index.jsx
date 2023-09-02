@@ -10,8 +10,8 @@ function capitalizeFirstLetter(string){
 }
 
 function Index ({pokemon}){
-    return (<main style={myStyle}>
-        <h1> My First React Component!</h1>
+    return (<main>
+        <h1 style={myStyle}> My First React Component!</h1>
         <ul>
             {
                 pokemon.map((pokemon, i) => {
